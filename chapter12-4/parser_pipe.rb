@@ -9,6 +9,8 @@ module Fluent::Plugin
   class PipeParser < Parser
     Fluent::Plugin.register_parser('pipe', self)
 
+    config_set_default :time_key, "0"
+
     def parse(text) # ブロック引数を受け取る
       text.split("\n").each do |line|
         values = line.split("|")
