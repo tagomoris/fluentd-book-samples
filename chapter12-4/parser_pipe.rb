@@ -14,7 +14,7 @@ module Fluent::Plugin
         values = line.split("|")
         raw_record = {}
         values.each_with_index do |value, index|
-          raw_record[(index + 1).to_s] = value
+          raw_record[index.to_s] = value
         end
         time, record = convert_values(parse_time(raw_record), raw_record)
         yield time, record
