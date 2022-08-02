@@ -20,7 +20,7 @@ class MyFirstFilterTest < Test::Unit::TestCase
 
     time = Fluent::EventTime.now
     d.run do
-      d.feed("testing.tag1", time, {"key1" => "value1", "key2" => 2})
+      d.feed("tag1", time, {"key1" => "value1", "key2" => 2})
     end
 
     result = d.filtered
