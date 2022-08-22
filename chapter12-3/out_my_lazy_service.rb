@@ -5,8 +5,8 @@ module Fluent::Plugin
     Fluent::Plugin.register_output('my_lazy_service', self)
 
     # realtimeの場合は非バッファ
-    # stableの場合は同期バッファ
-    # throughputの場合は非同期バッファ
+    # stableの場合は非同期バッファ
+    # throughputの場合は同期バッファ
     config_param :performance_mode, :enum, \
       list: [:realtime, :stable, :throughput]
 
@@ -16,8 +16,8 @@ module Fluent::Plugin
     end
 
     def prefer_delayed_commit
-      # throughputの場合は非同期バッファする
-      @performance_mode == :throughput
+      # stableの場合は非同期バッファする
+      @performance_mode == :stable
     end
 
     def process(tag, es)
