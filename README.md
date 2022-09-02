@@ -4,7 +4,9 @@
 
 ## Links
 
-TBD
+書籍サイト(技術評論社 gihyo.jp)
+
+https://gihyo.jp/book/2022/978-4-297-13109-8
 
 ## 内容
 
