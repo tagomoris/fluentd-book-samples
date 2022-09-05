@@ -6,9 +6,9 @@ module Fluent::Plugin
 
     def format(tag, time, record)
       values = []
-      num_keys = record.keys.select{|k| k =~ /^\d+$/}.map{|n| n.to_i}
-      num_keys.sort.each do |num|
-        values << record[num.to_s]
+      num_keys = record.keys.select{|k| k =~ /^\d+$/}
+      num_keys.sort_by{|k| k.to_i}.each do |key|
+        values << record[key]
       end
       values.join("|") + "\n"
     end
